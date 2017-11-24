@@ -1,29 +1,302 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
 
 <head>
-    <link href="CSS/newcss.css" rel="stylesheet" type="text/css" />
-    <meta charset="ISO-8859-1">
-    <title>welcome</title> </head>
+    <title>Adam Quill CV</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+   
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .newspaper {
+            -webkit-columns: 100px 3;
+
+            -moz-columns: 100px 3;
+
+            columns: 100px 3;
+        }
+    </style>
+</head>
 
 <body>
-    <div class="mainContent">
-        <div class="navigation">
-            <ol>
-                <li><a id="home" href="index.html">Home</a>
-                </li>
-            
-                <li><a href="Page 2.html">About</a>
-                </li>
-                <li><a href="Page 3.html">Products</a>
-                </li>
-                <li><a href="Page 4.html">Contact</a>
-                </li> </ol>
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+            <div class="profile-container">
+                <img class="profile" src="assets/images/me.jpg" alt="Adam Quill" />
+                <h1 class="name">Adam Quill</h1>
+                <h3 class="tagline"></h3>
+            </div>
+            <!--//profile-container-->
+
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+                    <li class="email">
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto: adam.quill1989@gmail.com">adam.quill1989@gmail.com</a>
+                    </li>
+                    <li class="phone">
+                        <i class="fa fa-phone"></i>
+                        <a>
+                            <br>07964824334</a>
+                    </li>
+                    <li class="linkedin">
+                        <i class="fa fa-linkedin"></i>
+                        <a href="linkedin.com/in/adammichaelquill/" target="_blank">linkedin/adammichaelquill</a>
+                    </li>
+                    <li class="github">
+                        <i class="fa fa-github"></i>
+                        <a href="https://github.com/adamquill" target="_blank">
+                            <br>github.com/adamquill</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!--//contact-container-->
+            <div class="education-container container-block">
+                <h2 class="container-block-title">Education</h2>
+                <div class="item">
+                    <h4 class="degree">BSc Music Technology</h4>
+                    <h5 class="meta">University of Glamorgan</h5>
+                    <div class="time">2008 - 2011</div>
+                </div>
+                <!--//item-->
+                <div class="item">
+                </div>
+                <!--//item-->
+            </div>
+            <!--//education-container-->
+
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Languages</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>English
+                        <span class="lang-desc">(Native)</span>
+                    </li>
+                    <li>Welsh
+                        <span class="lang-desc">(Basic)</span>
+                    </li>
+
+                </ul>
+            </div>
+            <!--//interests-->
+
+            <div class="interests-container container-block">
+                <h2 class="container-block-title">Interests</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>Rugby</li>
+                    <li>Skiing</li>
+                    <li>Photography</li>
+                    <li>Music</li>
+                </ul>
+            </div>
+            <!--//interests-->
+
         </div>
-        <div class="content">
-            <p>Welcome to my website :)
-            </p>
-            <img src="" alt="">
-        </div> </div></body>
+        <!--//sidebar-wrapper-->
+
+        <div class="main-wrapper">
+
+            <section class="section summary-section">
+                <h2 class="section-title">
+                    <i class="fa fa-user"></i>Profile</h2>
+                <div class="summary">
+                    <p>I am a Music Technology graduate with a great interest in new and upcoming technology. I have gained
+                        valuable experience in key fields including electronics, physics, programming, web design and audio
+                        capture. I am a creative and confident person who brings a dedicated and determined attitude to the
+                        workplace and am capable of working as an individual or as part of a team to get the job done. I
+                        enjoy the pressure of working to deadlines, which I have achieved with great success, and I am always
+                        looking to find new and interesting challenges.</p>
+                </div>
+                <!--//summary-->
+            </section>
+            <!--//section-->
+            <section class="section projects-section">
+                <h2 class="section-title">
+                    <i class="fa fa-archive"></i>Training</h2>
+                <div class="intro">
+                    <p>You can list your side projects or open source libraries in this section. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
+                </div>
+                <!--//intro-->
+                <div class="item">
+                    <span class="project-title">
+                        <a href="#hook">Velocity</a>
+                    </span> -
+                    <span class="project-tagline">A responsive website template designed to help startups promote, market and sell their products.</span>
+
+                </div>
+                <!--//item-->
+
+            </section>
+            <!--//section-->
+            <section class="skills-section section">
+                <h2 class="section-title">
+                    <i class="fa fa-rocket"></i>Skills &amp; Strengths</h2>
+                <div class="skillset">
+                    <div class="item">
+                        <div class="newspaper">Apple Product Professional Mac OS X expert
+                            <br> Windows OS professional Microsoft Office professional Analysis and problem solving Project planning
+                            <br> People management
+                            <br>Team management
+                            <br>Excellent time management
+                            <br> Highly self motivated Outstanding organization skills
+                            <br> Enthusiastic, proactive and flexible
+                            <br>Effective verbal and written communication
+                            <br>Ability to work well under pressure
+                            <br> Aptitude for perseverance
+                            <br>Motivational leader
+                            <br> Solid commercial awareness Great at building and maintaining relationships
+                        </div>
+
+                        </p>
+            </section>
+            <section class="section experiences-section">
+                <h2 class="section-title">
+                    <i class="fa fa-briefcase"></i>Education</h2>
+
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">BSc Music Technology</h3>
+                            <div class="time">June 2011</div>
+                        </div>
+                        <!--//upper-row-->
+                        <div class="company">University of Glamorgan</div>
+                    </div>
+                    <!--//meta-->
+                    <div class="details">
+                        <p>Insert Deg info here</p>
+                    </div>
+            </section>
+            <!--//skills-section-->
+            <section class="section experiences-section">
+                <h2 class="section-title">
+                    <i class="fa fa-briefcase"></i>Employment History</h2>
+
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Communication Systems Engineer</h3>
+                            <div class="time">February 2017 - August 2017</div>
+                        </div>
+                        <!--//upper-row-->
+                        <div class="company">British Army</div>
+                    </div>
+                    <!--//meta-->
+                    <div class="details">
+                        <p>Communication Systems Engineer Main responsibilities: Deal with different forms of digital and satellite
+                            communications, wireless and internet based systems, while also working with hardware and software
+                            from industry leaders. Successfully passed the challenging selection to gain a position at Pirbright
+                            ATC. Took part in a unique combination of military training and vocational training, including
+                            a wide variety of sports to promote fitness and agility to provide physical and mental challenges.
+                            Developed personal skills such as self-discipline, team work and leadership, through navigational
+                            exercises, command tasks and opportunities to lead the groups.</p>
+                    </div>
+                    <!--//details-->
+                </div>
+                <!--//item-->
+
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Freelance Sound Engineer</h3>
+                            <div class="time">April 2014 - February 2017</div>
+                        </div>
+                        <!--//upper-row-->
+                        <div class="company">Carmarthen, Wales</div>
+                    </div>
+                    <!--//meta-->
+                    <div class="details">
+                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                            nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+
+                    </div>
+                    <!--//details-->
+                </div>
+                <!--//item-->
+
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Geek Squad Agent</h3>
+                            <div class="time">September 2013- April 2014</div>
+                        </div>
+                        <!--//upper-row-->
+                        <div class="company">Carphone Warehouse</div>
+                    </div>
+                    <!--//meta-->
+                    <div class="details">
+                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                            nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                    </div>
+                    <!--//details-->
+                </div>
+                <!--//item-->
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Sales Associate</h3>
+                            <div class="time">May 2012- September 2013</div>
+                        </div>
+                        <!--//upper-row-->
+                        <div class="company">Stormfront Retail Ltd</div>
+                    </div>
+                    <!--//meta-->
+                    <div class="details">
+                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                            nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                    </div>
+                    <!--//details-->
+                </div>
+                <!--//item-->
+
+            </section>
+            <!--//section-->
+
+
+
+
+
+            </div>
+            <!--//main-body-->
+            </div>
+
+            <footer class="footer">
+
+                </div>
+                <!--//container-->
+            </footer>
+            <!--//footer-->
+
+            <!-- Javascript -->
+            <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+            <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+            <!-- custom js -->
+            <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
 
 </html>
