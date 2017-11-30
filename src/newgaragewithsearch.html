@@ -1,0 +1,209 @@
+<html lang="en">
+<link href="/searchpage.css" rel="stylesheet" type="text/css" />
+
+<head>
+    <title>Band Search</title>
+
+
+    <script>
+        var bandList = []
+
+        function createItem(Age, Name, Genre, Hometown) {
+            var bandObject = {
+                Age: Age,
+                Name: Name,
+                Genre: Genre,
+                Hometown: Hometown,
+
+
+            }
+            var request = new Request("http://localhost:3000/band", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bandObject)
+            });
+            fetch(request).then((response) => {
+                response.json().then(body => {
+                    bandList.push(bandObject);
+                    outputList();
+                });
+            });
+
+
+
+
+        }
+
+        function search() {
+            var genreToSearch = document.getElementById("genre").value
+            var itemOutput = "";
+            for (var i = 0; i < bandList.length; i++) {
+                if (bandList[i].Genre.includes(genreToSearch)) {
+
+
+                    itemOutput += "<option>";
+                    itemOutput += bandList[i].Name;
+                    itemOutput += "</option>";
+
+
+
+                }
+            } document.getElementById("output").innerHTML = itemOutput;
+        }
+
+
+
+
+        function outputList() {
+            var bandOutput = "";
+            for (var i = 0; i < bandList.length; i++) {
+                bandOutput += "<option>";
+                bandOutput += bandList[i].Name;
+                bandOutput += "</option>";
+            }
+            document.getElementById("output").innerHTML = bandOutput;
+        }
+
+
+        //removing band
+        function deleteBand(bandToDelete) {
+
+            var bandNameToDelete = bandList.find((band) => band.Name == bandToDelete);
+            if (bandNameToDelete){
+            var request = new Request("http://localhost:3000/band/" + bandNameToDelete._id, {
+                method: "Delete",
+
+            });
+            fetch(request).then(outputList);
+        }
+            for (var i = 0; i < bandList.length; i++) {
+                if (bandList[i].Name == bandToDelete) {
+                    bandList.splice(i, 1);
+                }
+            }
+
+        }
+
+        function createItemFromForm() {
+            var Age = document.getElementById("inputAge").value;
+            var Name = document.getElementById("inputName").value;
+            var Genre = document.getElementById("inputGenre").value;
+            var Hometown = document.getElementById("inputHometown").value;
+
+
+            if (Genre == "") {
+                alert("NEED GENRE!!")
+            }
+            else {
+                createItem(Age, Name, Genre, Hometown);
+
+                outputList();
+            }
+
+        }
+
+        function deleteAndUpdateForm() {
+            var bandToDelete = document.getElementById("removeBand").value;
+            deleteBand(bandToDelete)
+            outputList();
+        }
+
+        function loadItem() {
+            var listBox = document.getElementById("output");
+            var selectedName = listBox.options[listBox.selectedIndex].value;
+
+            for (var i = 0; i < bandList.length; i++) {
+                if (bandList[i].Name == selectedName) {
+                    var output = "";
+                    output += "<b>Name: </b>" + bandList[i].Name + "  ";
+                    output += "<br><b>Age: </b>" + bandList[i].Age + "  ";
+                    output += "<br><b>Genre: </b>" + bandList[i].Genre + "  ";
+                    output += "<br><b>Hometown: </b>" + bandList[i].Hometown + "  ";
+
+                    document.getElementById("individualOutput").innerHTML = output;
+
+
+                }
+            }
+        }
+
+        function getBandsFromDatabase() {
+            fetch("http://localhost:3000/band").then((response) => {
+                response.json().then((body) => {
+                    bandList = body;
+                    outputList();
+                })
+            })
+
+        }
+        getBandsFromDatabase();
+
+
+
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body style="font-family:Arial, Helvetica, sans-serif">
+    <div id="main">
+        <H1 style="margin-top:-0.5px">
+            <u>Add Band</u>
+        </H1>
+        <input type="Number" id="inputAge" placeholder="Age">
+        <br>
+
+        <input type="text" id="inputName" placeholder="Name">
+        <br>
+
+        <input type="text" id="inputGenre" placeholder="Genre">
+        <br>
+        <input type="text" id="inputHometown" placeholder="Hometown">
+        <br>
+        <br>
+        <button onclick="createItemFromForm()">Create Band</button>
+        <h1>
+            <u>Search by Genre</u>
+        </h1>
+        <input type="text" id="genre" placeholder="Genre" onkeyup="search()">
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <h1>
+            <u>Remove Band</u>
+        </h1>
+        <input type="text" id="removeBand" placeholder="Band Name">
+        <br>
+        <br>
+        <button onclick="deleteAndUpdateForm()">Delete Band</button>
+
+
+    </div>
+    <hr/>
+    <H1 id="section2">
+        <u id="Clist">Band List</u>
+        <br>
+        <select id="output" size="10" onchange="loadItem()" class="textBox" style="min-width:200px"></select>
+        <p id="individualOutput"></p>
+    </H1>
+    <br>
+    <br>
+   
+
+
+
+    </div>
+</body>
+
+
+</html>
